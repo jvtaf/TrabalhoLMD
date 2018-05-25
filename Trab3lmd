@@ -1,0 +1,105 @@
+Aluno: Joao Vitor Barbosa Tafuri
+Tarefa 3 - LMD
+
+
+	QUESTAO 1 -
+
+// Estado inicial: e0
+// Estado final: ef
+
+name: unary to binary
+init: e0
+accept: ef
+
+e0,1
+e1,x,<
+e0,x
+e0,x,>
+e0,y
+e0,y,>
+e1,x
+e1,x,<
+e1,z
+e1,y,<
+e1,y
+e0,z,>
+e1,_
+e0,z,>
+e0,_
+e3,_,<
+e3,y
+e3,0,<
+e3,z
+e3,1,<
+e3,x
+e3,_,<
+e3,_
+ef,_,-
+
+	QUESTAO 2 - 
+
+// Estado inicial: ei
+// Estado final: ef
+
+name: binary to unary
+init: qi
+accept: q2
+
+
+ei, _, _
+e0, _, _, <, -
+ei, 0, _
+ei, 0, _, >, -
+ei, 1, _
+ei, 1, _, >, -
+e0, 1, _
+e1, 0, _, >, -
+e0, _, _
+e2, _, _, >, -
+e0, 0, _
+e0, 1, _, <, -
+e1, 1, _
+e1, 1, _, >, -
+e1, _, _
+e0, _, 1, <, <
+e2, 1, _
+ef, _, _, >, -
+
+	QUESTAO 3 - 
+
+// --------- States -----------|
+// ei - reads the number |
+// eo- indicates if is odd |
+// ee - indicates if is even|
+//-----------------------------|
+name: Even or Odd
+init: qi
+accept: qo, qe
+ei,0
+ei,0,>
+ei,1
+ei,1,>
+ei,_
+eLast,_,<
+eLast,0
+eo,0,>
+eLast,1
+ee,1,>
+
+	QUESTAO 4 - 
+
+// --------- States -----------|
+// e1- map each a and b to 1|
+// e2 - accepting state |
+//-----------------------------|
+name: length of word
+init: e1
+accept: e2
+
+
+e1,a,_
+e1,a,1,>,>
+e1,b,_
+e1,b,1,>,>
+e1,_,_
+e2,_,_,-,-
